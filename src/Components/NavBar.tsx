@@ -1,7 +1,8 @@
+
 export default function Navbar() {
     return (
         <nav>
-            <a href="/">
+            <a href="/" className="nav">
                 Scented Craft
             </a>
             <ul>
