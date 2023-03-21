@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 
 export default function Navbar() {
     return (
@@ -21,10 +21,11 @@ interface CustomLinkProps {
 }
 
 const CustomLink: FC<CustomLinkProps> = ({ to, children, ...props }) => {
-    const path = window.location.pathname
+    const resolvePath = useResolvedPath(to)
+    const isActive = useMatch({ path: resolvePath.pathname, end : true})
 
     return(
-        <li className= {path === to ? "active" : ""}>
+        <li className= { isActive ? "active" : ""}>
             <Link to = {to} {...props}>
                 {children}
             </Link>
