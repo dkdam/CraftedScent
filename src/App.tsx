@@ -1,23 +1,29 @@
 import { useState } from 'react'
 import Navbar from './Components/NavBar'
+import Home from './Components/Home'
+import About from './Components/About'
+import Login from './Components/Login'
 import './styles.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  let component
+  switch (window.location.pathname) {
+    case "/":
+      component = <Home/>
+      break
+    case "/about":
+      component = <About/>
+      break
+    case "/login":
+      component = <Login/>
+      break
+  }
 
   return (
     <div className="App">
       <Navbar />
-      <h1> {count} Hotdogs </h1>
-      <br />
-      <button onClick={() => setCount(count => count + 1)}>
-        Hotdog Button
-      </button>
-      <br />
-      <br />
-      <button onClick={() => setCount(0)}>
-        Reset Hotdogs
-      </button>
+      {component}
     </div>
   )
 }
