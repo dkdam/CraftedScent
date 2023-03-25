@@ -20,7 +20,7 @@ interface CustomLinkProps {
     children: React.ReactNode;
 }
 
-const CustomLink: FC<CustomLinkProps> = ({ to, children, ...props }) => {
+const CustomLink: FC <CustomLinkProps> = ({ to, children, ...props }) => {
     const resolvePath = useResolvedPath(to)
     const isActive = useMatch({ path: resolvePath.pathname, end : true})
 
