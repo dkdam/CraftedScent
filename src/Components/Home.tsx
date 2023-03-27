@@ -1,5 +1,11 @@
+import { useState } from "react"
+
 export default function Home() {
+
     return (
-        <h1>Home</h1>
+            <div>
+                <h1>Home</h1>
+                <p>Content Coming Soon...</p>
+            </div>
     )
 }

@@ -8,6 +8,7 @@ export default function Navbar() {
                 Scented Craft
             </Link>
             <ul>
+                <CustomLink to="/product">Products</CustomLink>
                 <CustomLink to="/about">About</CustomLink>
                 <CustomLink to="/login">Login</CustomLink>
             </ul>
