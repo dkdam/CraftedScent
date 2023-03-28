@@ -28,19 +28,18 @@ export default function Product() {
     return (
         <div className='content-container'>
             <h1>Product</h1>
-            <p>Coming soon..</p>
             <ul>
             {items.map((props : ProductProps) => {
                 return(
                     <li key={props.id}>
-                        <div>
+                        <>
                             <div className="content">
-                            <h5>{props.title}</h5>
+                            <h3>{props.title}</h3>
                             <img src={props.image} alt="" />
                             <p>{props.description}</p>
                             <p>${props.price}</p>
-                        </div>
-                        </div>
+                            </div>
+                        </>
                     </li>
                 )
             })}
