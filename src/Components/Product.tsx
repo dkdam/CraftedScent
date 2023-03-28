@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
+interface ProductProps {
+    id: number;
+    title: string;
+    description: string;
+    price: number;
+    image: string;
+}
+
 export default function Product() {
 
     const [items,setItems] = useState([])
@@ -21,18 +29,22 @@ export default function Product() {
         <div>
             <h1>Product</h1>
             <p>Coming soon..</p>
-            {items.map((props) => {
+            <ul>
+            {items.map((props : ProductProps) => {
                 return(
-                    <div>
-                        <div className="content">
+                    <li key={props.id}>
+                        <div>
+                            <div className="content">
                             <h5>{props.title}</h5>
                             <p>{props.description}</p>
                             <p>${props.price}</p>
                         </div>
                         <img src={props.image} alt="" />
-                    </div>
+                        </div>
+                    </li>
                 )
             })}
+            </ul>
         </div>
     
         )
