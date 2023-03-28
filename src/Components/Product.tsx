@@ -26,7 +26,7 @@ export default function Product() {
     },[])
 
     return (
-        <div>
+        <div className='content-container'>
             <h1>Product</h1>
             <p>Coming soon..</p>
             <ul>
@@ -36,10 +36,10 @@ export default function Product() {
                         <div>
                             <div className="content">
                             <h5>{props.title}</h5>
+                            <img src={props.image} alt="" />
                             <p>{props.description}</p>
                             <p>${props.price}</p>
                         </div>
-                        <img src={props.image} alt="" />
                         </div>
                     </li>
                 )
