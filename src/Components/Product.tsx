@@ -14,7 +14,7 @@ export default function Product() {
     const [items,setItems] = useState([])
 
     const store = () => {
-        axios.get('http://fakestoreapi.com/products').then(res => {
+        axios.get(import.meta.env.VITE_API_STORE).then(res => {
                 setItems(res.data)
             }).catch(err => {
                 console.log(err)

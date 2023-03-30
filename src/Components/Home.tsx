@@ -4,8 +4,6 @@ import axios from "axios"
 
 export default function Home() {
 
-const [input,setInput] = useState('')
-const [result,setResult] = useState<Product[]>([])
 
 interface Product {
     id: number;
@@ -16,11 +14,19 @@ interface Product {
     category: string;
 }
 
+const [input,setInput] = useState('')
+const [result,setResult] = useState<Product[]>([])
+
     const fetchData = (value:string) => {
-        axios.get('https://fakestoreapi.com/products')
+        axios.get(import.meta.env.VITE_API_STORE)
             .then(res => { 
                 const result = res.data.filter((product:any) => {
-                    return value && product && product.title && product.title.toLowerCase().includes(value)
+                    return (
+                        value && 
+                        product && 
+                        product.title && 
+                        product.title.toLowerCase().includes(value)
+                    )
                 })
                 setResult(result)
             })
@@ -45,7 +51,6 @@ interface Product {
                     />
                 </div>
                 <div className='content-container'>
-            <h1>Product</h1>
             <ul>
                 {result.map((props : Product) => {
                     return(
