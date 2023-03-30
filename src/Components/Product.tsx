@@ -13,7 +13,7 @@ export default function Product() {
 
     const [items,setItems] = useState([])
 
-    const store = async() => {
+    const store = () => {
         axios.get('http://fakestoreapi.com/products').then(res => {
                 setItems(res.data)
             }).catch(err => {

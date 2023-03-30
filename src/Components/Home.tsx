@@ -1,9 +1,36 @@
 import { useState } from "react"
 import "./Home.css"
+import axios from "axios"
 
 export default function Home() {
 
-    const [input,setInput] = useState('')
+const [input,setInput] = useState('')
+const [result,setResult] = useState<Product[]>([])
+
+interface Product {
+    id: number;
+    title: string;
+    description: string;
+    price: number;
+    image: string;
+    category: string;
+}
+
+    const fetchData = (value:string) => {
+        axios.get('https://fakestoreapi.com/products')
+            .then(res => { 
+                const result = res.data.filter((product:any) => {
+                    return value && product && product.title && product.title.toLowerCase().includes(value)
+                })
+                setResult(result)
+            })
+    }
+
+    const handlChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const value = event.target.value
+        setInput(value)
+        fetchData(value)
+    }
 
     return (
             <div>
@@ -14,9 +41,28 @@ export default function Home() {
                         type="Search" 
                         placeholder="Search Product" 
                         value={input}
-                        onChange={(e) => setInput(e.target.value)}
+                        onChange={handlChange}
                     />
                 </div>
+                <div className='content-container'>
+            <h1>Product</h1>
+            <ul>
+                {result.map((props : Product) => {
+                    return(
+                        <li key={props.id}>
+                            <>
+                                <div className="content">
+                                <h3>{props.title}</h3>
+                                <img src={props.image} alt="" />
+                                <p>{props.description}</p>
+                                <p>${props.price}</p>
+                                </div>
+                            </>
+                        </li>
+                    )
+                })}
+            </ul>
+        </div>
             </div>
     )
 }
