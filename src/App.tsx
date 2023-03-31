@@ -1,10 +1,8 @@
-import { useState } from 'react'
 import Navbar from './Components/NavBar'
 import Home from './Components/Home'
 import About from './Components/About'
 import Login from './Components/Login'
 import Product from './Components/Product'
-import SearchBar from './Components/SearchBar'
 import { Route, Routes } from 'react-router-dom'
 import './styles.css'
 
