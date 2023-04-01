@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-    margin: 1rem;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -67,9 +67,14 @@ body {
     height: 300px;
 }
 
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
 .footer {
-    position: relative;
-    bottom: -305px;
     background-color: #333;
     color: whitesmoke;
     display: flex;
@@ -82,6 +87,7 @@ body {
 .footer-left {
     /* Adjust width as needed */
     width: 50%;
+    text-align: left;
 }
 
 .footer-right {

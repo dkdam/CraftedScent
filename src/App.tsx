@@ -19,8 +19,11 @@ function App() {
             <Route path ='/login' element = {<Login/>} />
             <Route path ='/product' element = {<Product/>} />
           </Routes>
+        
         </div>
-      <Footer/>
+        <footer>
+          <Footer/>
+        </footer>
     </>
   )
 }
