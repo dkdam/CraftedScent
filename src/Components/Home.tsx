@@ -4,18 +4,17 @@ import axios from "axios"
 
 export default function Home() {
 
+    interface Product {
+        id: number;
+        title: string;
+        description: string;
+        price: number;
+        image: string;
+        category: string;
+    }
 
-interface Product {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-    image: string;
-    category: string;
-}
-
-const [input,setInput] = useState('')
-const [result,setResult] = useState<Product[]>([])
+    const [input,setInput] = useState('')
+    const [result,setResult] = useState<Product[]>([])
 
     const fetchData = (value:string) => {
         axios.get(import.meta.env.VITE_API_STORE)
