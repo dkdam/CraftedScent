@@ -39,35 +39,35 @@ export default function Home() {
     }
 
     return (
-            <div>
-                <h1>Home</h1>
-                < Carousel />
-                <div className="input-container">
-                    <input 
-                        type="Search" 
-                        placeholder="Search Product" 
-                        value={input}
-                        onChange={handlChange}
-                    />
-                </div>
-                <div className='content-container'>
-            <ul>
-                {result.map((props : Product) => {
-                    return(
-                        <li key={props.id}>
-                            <>
-                                <div className="content">
-                                <h3>{props.title}</h3>
-                                <img src={props.image} alt="" />
-                                <p>{props.description}</p>
-                                <p>${props.price}</p>
-                                </div>
-                            </>
-                        </li>
-                    )
-                })}
-            </ul>
-        </div>
+        <div>
+            <h1>Home</h1>
+            < Carousel />
+            <div className="input-container">
+                <input 
+                    type="Search" 
+                    placeholder="Search Product"                         
+                    value={input}
+                    onChange={handlChange}
+                />
             </div>
+            <div className='content-container'>
+                <ul>
+                    {result.map((props : Product) => {
+                        return(
+                            <li key={props.id}>
+                                <>
+                                    <div className="content">
+                                    <h3>{props.title}</h3>
+                                    <img src={props.image} alt="" />
+                                    <p>{props.description}</p>
+                                    <p>${props.price}</p>
+                                    </div>
+                                </>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>
+        </div>
     )
 }
