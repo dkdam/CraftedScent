@@ -1,0 +1,23 @@
+.aboutContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.aboutContent {
+    max-width: 800px;
+    margin: 0 20px;
+    padding: 20px;
+    text-align: justify;
+}
+
+.aboutContent h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.aboutContent p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
