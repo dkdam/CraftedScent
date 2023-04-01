@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Carousel from "./Carousel";
 import "./Home.css"
 import axios from "axios"
 
@@ -40,7 +41,7 @@ export default function Home() {
     return (
             <div>
                 <h1>Home</h1>
-                <p>Search Store</p>
+                < Carousel />
                 <div className="input-container">
                     <input 
                         type="Search" 
